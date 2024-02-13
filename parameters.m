@@ -3,11 +3,11 @@
 % Parameters
 
 % Stokeslet parameters
-rho = 10; % Number of stokeslets per unit length.
+rho = 20; % Number of stokeslets per unit length.
 eps = 0.01; % Regularisaton parameter.
 
 % Channel geometry
-Lt = 8; % Length of top segment.
+Lt = 10; % Length of top segment.
 Lm = 8; % Length of transition region.
 Lb = 10; % Length of bottom segment.
 theta = pi/4; % Angle of right transition region to horizontal.
@@ -17,7 +17,7 @@ Pty = Lt+Lm/2; % Position of top point of right boundary.
 
 % Appendage geometry
 dsep = 1; % Appendage separation.
-psi = pi/2; % Angle of inclination between appendage pairs (Rad).
+psi = 0; % Angle of inclination between appendage pairs (Rad).
 PRAx = 5; % Position of right appendage in x.
 PRAy = 5; % Position of right appendage in y.
 
@@ -25,7 +25,7 @@ PRAy = 5; % Position of right appendage in y.
 U0 = -1; % Background flow strength Max.
 
 % Underlying space parameters.
-nptx = 400; % Solver points in x direction.
+nptx = 500; % Solver points in x direction.
 npty = nptx; % Solver points in y direction.
-x = linspace(-(Ptx+1),(Ptx+1),nptx); % Solver x coords.
-y = linspace(-(Ptx+1),(Ptx+1),npty); % Solver y coords.
+x = linspace(-(Ptx+1)-5,(Ptx+1)+5,nptx); % Solver x coords.
+y = linspace(-(Ptx+1)-5,(Ptx+1)+5,npty); % Solver y coords.

@@ -9,7 +9,7 @@
 % portions of the boundaries.
 %--------------------------------------------%
 
-close all
+close allnpts
 clear all
 
 %% Set parameters
@@ -39,12 +39,12 @@ F = getForces(stks,eps,U0);
 % This section calculates the local magnitude of the flow the create the colourised background. 
 % Then the quiver plot can be overlaid on top of this to give the directions of the flow.
 
-n=1; % Plot coarseness
+n=15; % Plot coarseness
 Umag = sqrt(Uflowx.^2 + Uflowy.^2); % Get flow field magnitude
-imagesc(x,y,Umag') % Plot local flow strenght as a background
+imagesc(x,y,Umag) % Plot local flow strenght as a background
 hold on
-scatter(stks(:,1),stks(:,2),2,'r') % Plot the Stokeslets
-%quiver(x(1:n:end),y(1:n:end),Uflowx(1:n:end,1:n:end),Uflowy(1:n:end,1:n:end)) % Plot the vector field
+scatter(stks(:,2),stks(:,1),2,'r') % Plot the Stokeslets
+quiver(x(1:n:end),y(1:n:end),Uflowy(1:n:end,1:n:end),Uflowx(1:n:end,1:n:end),2,'Color','y') % Plot the vector field
 axis equal
 
 %% Close the pool of parallel workers

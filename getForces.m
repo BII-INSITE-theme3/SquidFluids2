@@ -69,7 +69,10 @@ function [F] = getForces(stks1,eps1,U01)
 
     % Calculate the forces and then put them into vector format for output.
     % ForceVertical = zeros(2*nStok,1);
-    ForceVertical = inv(S)*BdryVertical; % Inv here is inefficient, but seems to work well. It is likely poorly conditioned for very large numbers of Stokelets.
+    %tol = 1e-4;
+    %maxit = 100;
+    %[ForceVertical,~] = gmres(S,BdryVertical,[],tol,maxit); % Inv here is inefficient, but seems to work well. It is likely poorly conditioned for very large numbers of Stokelets.
+    ForceVertical = S\BdryVertical; % Backslash method, potential source of error.
     F = zeros(nStok,2);
     F(:,1) = ForceVertical(1:2:end);
     F(:,2) = ForceVertical(2:2:end);

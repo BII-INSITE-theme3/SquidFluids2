@@ -9,7 +9,7 @@ function [Uflowx,Uflowy] = calculateFlowGrid(stks1,F1,x1,y1)
 
     % Scan through the whole grid 
     for xposition = 1:length(x1)
-        for yposition = 1:length(y1)
+        parfor yposition = 1:length(y1)
 
             Stemp = zeros(2,2); % Store for the Stokeslet between the current point of consideration [xposition,yposition] and the collection of Stokeslets
 
