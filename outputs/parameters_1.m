@@ -3,7 +3,7 @@
 % Parameters:
 
 % Stokeslet parameters
-rho = 10; % Number of stokeslets per unit length.
+rho = 20; % Number of stokeslets per unit length.
 eps = 0.01; % Regularisaton parameter.
 
 % Channel geometry

@@ -76,6 +76,10 @@ function [F] = getForces(stks1,eps1,U01)
     F = zeros(nStok,2);
     F(:,1) = ForceVertical(1:2:end);
     F(:,2) = ForceVertical(2:2:end);
+    
+    % Set the net force to zero
+    F(:,1) = F(:,1) - mean(F(:,1));
+    F(:,2) = F(:,2) - mean(F(:,2));
 
     % Visualise the forces calculated. May need to remove large values to aid the viewing.
     % quiver(stks1(:,1),stks1(:,2),F(:,1),F(:,2))
